@@ -1,3 +1,5 @@
+import { DeletePacienteButton } from "../buttons/DeleteButton"
+import { EditPacienteButton } from "../buttons/EditButton"
 import "./Card.css"
 
 interface CardProps {
@@ -13,6 +15,10 @@ export function Card({ numeroDePaciente, nome, email, cpf }: CardProps) {
         <p>Id: {numeroDePaciente}</p>
         <p>cpf: {cpf}</p>
         <p>email: {email}</p>
+        <div className="actionsButtons">
+            <EditPacienteButton id={numeroDePaciente} cpf={cpf} email={email} />
+            <DeletePacienteButton id={numeroDePaciente} />
+        </div>
     </div>)
 
 }

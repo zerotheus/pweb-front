@@ -26,7 +26,7 @@ function App() {
             cpf={paciente.cpf} />)}
         </div>
         {isModalOpen && <CreateModal closeModal={handleOpenModal} />}
-        <button onClick={handleOpenModal}>Cadastre</button>
+        <button className='Cadastre' onClick={handleOpenModal}>Cadastre</button>
       </div>
     </>
   )
