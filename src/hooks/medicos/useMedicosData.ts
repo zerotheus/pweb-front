@@ -1,19 +1,19 @@
 import axios, { AxiosPromise } from "axios"
-import { PacienteData } from "../interface/PacienteData"
 import { useQuery } from "@tanstack/react-query"
-const baseUrl = "http://localhost:8083/Paciente"
+import { MedicoData } from "../../interface/form/Medico/MedicoData"
+const baseUrl = "http://localhost:8084/Medico"
 
-const list = async ():AxiosPromise<PacienteData[]> => {
+const list = async ():AxiosPromise<MedicoData[]> => {
     const response = axios.get(`${baseUrl}/list/0`)
     console.log(response)
     return (await response).data.content
 }
 
-export function usePacienteData(){
+export function useMedicoData(){
 
     const query = useQuery({
         queryFn: list,
-        queryKey: ['paciente-data'],
+        queryKey: ['medico-data'],
         retry: 2
     })
 

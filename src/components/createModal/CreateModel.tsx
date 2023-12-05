@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { PacienteForm } from "../../interface/form/PacienteForm";
-import { DadosCadastrais } from "../../interface/form/DadosCadastrais";
-import { Endereco } from "../../interface/form/Endereco";
-import { usePacienteForm } from "../../hooks/usePacienteForm";
+import { PacienteForm } from "../../interface/form/Paciente/PacienteForm";
+import { DadosCadastrais } from "../../interface/form/Paciente/DadosCadastrais";
+import { Endereco } from "../../interface/form/Paciente/Endereco";
+import { usePacienteForm } from "../../hooks/pacientes/usePacienteForm";
 import "./modal.css"
 
 interface InputProps {

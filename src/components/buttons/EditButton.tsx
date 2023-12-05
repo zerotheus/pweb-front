@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { usePacienteDelete } from "../../hooks/usePacienteDelete";
-import { usePacienteEdit } from "../../hooks/usePacienteEdit";
+import { usePacienteDelete } from "../../hooks/pacientes/usePacienteDelete";
+import { usePacienteEdit } from "../../hooks/pacientes/usePacienteEdit";
 import { EditModal } from "../updateModal/updateModal";
 import "./EditButton.css"
 

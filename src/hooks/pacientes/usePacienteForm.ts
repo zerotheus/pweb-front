@@ -1,23 +1,18 @@
 import axios, { AxiosPromise } from "axios"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { PacienteForm } from "../interface/form/PacienteForm"
+import { PacienteForm } from "../../interface/form/Paciente/PacienteForm"
 const baseUrl = "http://localhost:8083/Paciente"
 
-export interface PutProps{
-    pacienteForm:PacienteForm,
-    id:number
-}
-
-
-const edit = async ({pacienteForm,id}:PutProps):AxiosPromise<any> => {
-    const response = axios.put(`${baseUrl}/Edit/`+ id,pacienteForm)
+const register = async (data:PacienteForm):AxiosPromise<any> => {
+    console.log(data)
+    const response = axios.post(`${baseUrl}/Register`,data)
     return response
 }
 
-export function usePacienteEdit(){
+export function usePacienteForm(){
     const queryClient = useQueryClient()
     const mutate = useMutation({
-        mutationFn: edit,
+        mutationFn: register,
         retry: 2,
         onSuccess: () =>{
             queryClient.invalidateQueries(['paciente-data'])

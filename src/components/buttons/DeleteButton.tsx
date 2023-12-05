@@ -1,4 +1,4 @@
-import { usePacienteDelete } from "../../hooks/usePacienteDelete";
+import { usePacienteDelete } from "../../hooks/pacientes/usePacienteDelete";
 import "./DeleteButton.css"
 
 interface DeleteProps {
