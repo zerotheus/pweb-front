@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { MedicoData } from '../interface/form/Medico/MedicoData'
-import { CreateModal } from '../components/createModal/CreateModel'
 import { useMedicoData } from '../hooks/medicos/useMedicosData'
 import { MedicoCard } from '../components/Card/MedicoCard'
+import { CreateMedicoModal } from '../components/createModal/CreateMedicoModal'
 
 
 export function Medicos() {
@@ -22,9 +21,12 @@ export function Medicos() {
                     numeroDoMedico={medico.numeroIndetificador}
                     nome={medico.nome}
                     email={medico.email}
-                    crm={medico.crm} />)}
+                    crm={medico.crm}
+                    especialidade={medico.especialidade}
+                />)}
+
             </div>
-            {isModalOpen && <CreateModal closeModal={handleOpenModal} />}
+            {isModalOpen && <CreateMedicoModal closeModal={handleOpenModal} />}
             <button className='Cadastre' onClick={handleOpenModal}>Cadastre</button>
         </div>
     )
